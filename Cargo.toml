@@ -1,0 +1,8 @@
+[package]
+name = "Rust"
+version = "0.1.0"
+authors = ["Hongjie Dong <hongjieuf@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+ferris-says = "0.1"
