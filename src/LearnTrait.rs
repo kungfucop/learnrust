@@ -76,9 +76,17 @@ pub fn notify3<T: Summary + Display>(item: T) {}
 
 fn some_function<T, U>(t: T, u: U) -> i32
     where T: Display + Clone,
-          U: Clone + Debug {}
+          U: Clone + Debug {
+    return 1;
+}
 
-fn returns_summarizable() -> impl Summary {}
+fn returns_summarizable() -> impl Summary {
+    let student = Student {
+        age: 1,
+        name: String::from("hongjie"),
+    };
+    return student;
+}
 
 struct Pair<T> {
     x: T,
@@ -104,9 +112,18 @@ impl<T: Display + PartialOrd> Pair<T> {
     }
 }
 
-impl<T: Display> ToString for T {
-    fn to_string(&self) -> String {
-        unimplemented!()
-    }
-    // --snip--
+fn foo() -> Box<Fn(i32) -> i32> {
+    Box::new(|x| x + 1)
 }
+
+fn fooSame() -> impl Fn(i32) -> i32 {
+    |x| x + 1
+}
+
+//impl<T: Display> ToString for T {
+//    fn to_string(&self) -> String
+//    {
+//        return String::from("check")
+//    }
+//    // --snip--
+//}
