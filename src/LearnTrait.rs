@@ -127,3 +127,12 @@ fn fooSame() -> impl Fn(i32) -> i32 {
 //    }
 //    // --snip--
 //}
+
+struct LifeTimeTrick<'a> {
+    pub name: &'a String
+}
+
+fn testLifeCycleTrick() {
+    let name = String::from("hello you");
+    let lft = LifeTimeTrick { name:&name };
+}
