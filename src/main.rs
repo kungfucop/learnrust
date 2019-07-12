@@ -3,16 +3,10 @@ use core::fmt::Alignment::Left;
 mod LearnBox;
 mod LearnTrait;
 mod LearnOwnership;
-
+mod Closure;
+mod LearnVec;
 fn main() {
 
-    LearnBox::store_on_help();
-    LearnBox::recursive_type();
-    LearnTrait::testPrinter();
-    LearnTrait::test_default_trait_imp();
-    LearnTrait::testTraitReference();
-
-    LearnOwnership::run();
     let pair = (0, -2);
     // TODO ^ Try different values for `pair`
 
@@ -45,4 +39,13 @@ fn main() {
     }
 
     let baz = Baz;
+
+    LearnBox::store_on_help();
+    LearnBox::recursive_type();
+    LearnTrait::testPrinter();
+    LearnTrait::test_default_trait_imp();
+    LearnTrait::testTraitReference();
+    Closure::run();
+    LearnOwnership::run();
+    LearnVec::run();
 }
