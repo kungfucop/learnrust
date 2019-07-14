@@ -1,10 +1,11 @@
 use core::fmt::Alignment::Left;
-
+mod LearnIterator;
 mod LearnBox;
 mod LearnTrait;
 mod LearnOwnership;
 mod Closure;
 mod LearnVec;
+mod LearnErrorHandling;
 fn main() {
 
     let pair = (0, -2);
@@ -48,4 +49,5 @@ fn main() {
     Closure::run();
     LearnOwnership::run();
     LearnVec::run();
+    LearnIterator::run();
 }
